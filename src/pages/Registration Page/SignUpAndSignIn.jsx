@@ -42,10 +42,10 @@ const SignUpAndSignIn = () => {
         localStorage.setItem("userInfo", JSON.stringify(data));
         navigate("/home");
       } else {
-        res.status(400).json("user trying with same email id");
+        res.status(400).send("user trying with same email id");
       }
     } catch (error) {
-      res.status(400).json("signUp Problem");
+      res.status(400).send("signUp Problem");
     }
   };
 
