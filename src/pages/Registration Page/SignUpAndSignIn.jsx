@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const SignUpAndSignIn = () => {
   const navigate = useNavigate();
-console.log(import.meta.env.VITE_REACT_APP_API_BASE_URL_server);
+
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -30,7 +30,9 @@ console.log(import.meta.env.VITE_REACT_APP_API_BASE_URL_server);
     try {
       const { data } = await toast.promise(
         axios.post(
-          `/api/user/signup`,
+          `${
+            import.meta.env.VITE_REACT_APP_API_BASE_URL_server
+          }/api/user/signup`,
           { name, email, password }
         ),
         {
@@ -66,7 +68,12 @@ console.log(import.meta.env.VITE_REACT_APP_API_BASE_URL_server);
 
     try {
       const { data } = await toast.promise(
-        axios.post('/api/user/signin', { email, password }),
+        axios.post(
+          `${
+            import.meta.env.VITE_REACT_APP_API_BASE_URL_server
+          }/api/user/signin`,
+          { email, password }
+        ),
         {
           pending: "signin in process",
           success: "signin is completed",
@@ -97,7 +104,12 @@ console.log(import.meta.env.VITE_REACT_APP_API_BASE_URL_server);
 
     try {
       const { data } = await toast.promise(
-        axios.put("/api/user/password", { email, password, newPassword }),
+        axios.put(
+          `${
+            import.meta.env.VITE_REACT_APP_API_BASE_URL_server
+          }/api/user/password`,
+          { email, password, newPassword }
+        ),
         {
           pending: "create new password in process",
           success: " password successfully changed",
