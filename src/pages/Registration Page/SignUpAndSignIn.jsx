@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 const SignUpAndSignIn = () => {
   const navigate = useNavigate();
-console.log(import.meta.env.VITE_REACT_APP_API_BASE_URL_server);
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
