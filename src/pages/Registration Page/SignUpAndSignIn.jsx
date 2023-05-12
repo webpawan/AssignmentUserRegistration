@@ -32,7 +32,7 @@ console.log(import.meta.env.VITE_REACT_APP_API_BASE_URL_server);
         axios.post(
           `${
             import.meta.env.VITE_REACT_APP_API_BASE_URL_server
-          }/api/user/signup`,
+          }api/user/signup`,
           { name, email, password }
         ),
         {
