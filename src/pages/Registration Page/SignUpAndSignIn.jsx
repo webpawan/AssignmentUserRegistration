@@ -11,7 +11,6 @@ const SignUpAndSignIn = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(0);
   const [newPassword, setnewPassword] = useState();
 
@@ -30,7 +29,7 @@ const SignUpAndSignIn = () => {
 
     try {
       const { data } = await toast.promise(
-        axios.post("/api/user/signup", { name, email, password }),
+        axios.post(`/api/user/signup`, { name, email, password }),
         {
           pending: "registration in process",
           success: "registration is completed",
@@ -64,7 +63,7 @@ const SignUpAndSignIn = () => {
 
     try {
       const { data } = await toast.promise(
-        axios.post("/api/user/signin", { email, password }),
+        axios.post('/api/user/signin', { email, password }),
         {
           pending: "signin in process",
           success: "signin is completed",
