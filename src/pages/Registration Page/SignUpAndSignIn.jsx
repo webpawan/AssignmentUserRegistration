@@ -29,10 +29,7 @@ const SignUpAndSignIn = () => {
 
     try {
       const { data } = await toast.promise(
-        axios.post(
-          `/api/user/signup`,
-          { name, email, password }
-        ),
+        axios.post(`/api/user/signup`, { name, email, password }),
         {
           pending: "registration in process",
           success: "registration is completed",
@@ -49,7 +46,6 @@ const SignUpAndSignIn = () => {
     } catch (error) {
       console.log(error);
       res.status(400).send("signUp Problem");
-      
     }
   };
 
@@ -68,12 +64,7 @@ const SignUpAndSignIn = () => {
 
     try {
       const { data } = await toast.promise(
-        axios.post(
-          `${
-            import.meta.env.VITE_REACT_APP_API_BASE_URL_server
-          }api/user/signin`,
-          { email, password }
-        ),
+        axios.post(`/api/user/signin`, { email, password }),
         {
           pending: "signin in process",
           success: "signin is completed",
@@ -104,12 +95,7 @@ const SignUpAndSignIn = () => {
 
     try {
       const { data } = await toast.promise(
-        axios.put(
-          `${
-            import.meta.env.VITE_REACT_APP_API_BASE_URL_server
-          }api/user/password`,
-          { email, password, newPassword }
-        ),
+        axios.put(`/api/user/password`, { email, password, newPassword }),
         {
           pending: "create new password in process",
           success: " password successfully changed",
@@ -346,7 +332,9 @@ const SignUpAndSignIn = () => {
                 >
                   <div className="card-body p-5 text-center">
                     <div className=" ">
-                      <h2 className=" mb-5 text-uppercase">Make new Password</h2>
+                      <h2 className=" mb-5 text-uppercase">
+                        Make new Password
+                      </h2>
 
                       <div className="form-outline form-white mb-3">
                         <input
