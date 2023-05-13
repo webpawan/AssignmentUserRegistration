@@ -30,9 +30,7 @@ const SignUpAndSignIn = () => {
     try {
       const { data } = await toast.promise(
         axios.post(
-          `${
-            import.meta.env.VITE_REACT_APP_API_BASE_URL_server
-          }api/user/signup`,
+          `/api/user/signup`,
           { name, email, password }
         ),
         {
@@ -69,9 +67,7 @@ const SignUpAndSignIn = () => {
     try {
       const { data } = await toast.promise(
         axios.post(
-          `${
-            import.meta.env.VITE_REACT_APP_API_BASE_URL_server
-          }api/user/signin`,
+          `/api/user/signin`,
           { email, password }
         ),
         {
@@ -105,9 +101,7 @@ const SignUpAndSignIn = () => {
     try {
       const { data } = await toast.promise(
         axios.put(
-          `${
-            import.meta.env.VITE_REACT_APP_API_BASE_URL_server
-          }api/user/password`,
+          `/api/user/password`,
           { email, password, newPassword }
         ),
         {
