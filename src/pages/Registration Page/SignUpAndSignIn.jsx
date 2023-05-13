@@ -49,7 +49,9 @@ const SignUpAndSignIn = () => {
         res.status(400).send("user trying with same email id");
       }
     } catch (error) {
+      console.log(error);
       res.status(400).send("signUp Problem");
+      
     }
   };
 
