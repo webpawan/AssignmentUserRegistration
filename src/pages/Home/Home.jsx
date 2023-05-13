@@ -32,7 +32,9 @@ const Home = () => {
     try {
       const { data } = await toast.promise(
         axios.put(
-          `/api/user/rename`,
+          `${
+            import.meta.env.VITE_REACT_APP_API_BASE_URL_server
+          }api/user/rename`,
           {
             userId,
             name,
